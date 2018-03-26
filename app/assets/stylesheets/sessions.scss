@@ -1,0 +1,714 @@
+.form.logIn{
+  width: 100%;
+}
+
+.form table{
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: separate;
+}
+
+.form.submit{
+  width: 100%;
+}
+
+.form.submit table{
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form.submit table tbody{
+  width: 100%;
+}
+
+.form.submit table tbody tr{
+  width: 100%;
+}
+
+.form.submit table tbody tr th{
+  width: 35%;
+  text-align: right;
+  color: #ddd;
+}
+
+.form.submit table tbody tr th label{
+  padding: 20px 0 0;
+}
+
+.form.submit table tbody tr td{
+  width: 65%;
+  padding-left: 3%;
+  text-align: left;
+}
+
+.form.submit table tbody tr td input{
+  width: 50%;
+  padding: 10px 0 0;
+  background-color: #000;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ddd;
+  color: #fff;
+}
+
+.form.submit.newEvent table{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form.view table th, .form.view table td{
+  border: 1px #ddd solid;
+}
+
+.form.submit.newEvent table tbody tr th{
+  width: 20%;
+  text-align: center;
+  color: #ddd;
+}
+
+.form.submit.newEvent table tbody tr th label{
+  margin: 0;
+  padding: 15px 0;
+}
+
+.form.submit.newEvent table tbody tr td{
+  width: 80%;
+  padding: 0;
+  text-align: left;
+  color: #ddd;
+}
+
+.form.submit.newEvent table tbody tr td input, .form.submit.newEvent table tbody tr td textarea{
+  margin: 10px 0;
+  padding: 15px;
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+  resize: none;
+  border-radius: 10px;
+}
+
+.form.submit.newEvent table tbody tr td input:focus,
+.form.submit.newEvent table tbody tr td textarea:focus {
+  box-shadow: 0 0 7px #1abc9c;
+  border: 1px solid #1abc9c;
+  border-radius: 10px;
+}
+
+.form.submit.newEvent table tbody tr td select{
+  color: #000;
+}
+
+.form.submit.newEvent table tbody tr td input.title{
+  min-height: 80px;
+  max-height: 200px;
+}
+
+.form.submit.newEvent table tbody tr td textarea{
+  min-height: 400px;
+  max-height: 800px;
+}
+
+.form.submit.newEvent table tbody tr td input.image{
+  background-color: #000;
+  color: #ddd;
+  border: none;
+}
+
+.form.submit.newEvent table tbody tr td input.place{
+  height: 50px;
+}
+
+.form.submit.newEvent table tbody tr td input.payment{
+  margin-right: 10px;
+  width: 120px;
+  height: 50px;
+}
+
+.form.submit.newEvent table tbody tr td input.maxpeople{
+  margin-right: 10px;
+  width: 90px;
+  height: 50px;
+}
+
+.form.submit table tr td input:focus{
+  background-color: #000;
+}
+
+.titleLength, .contentLength{
+  margin: 20px 0 0;
+  text-align: right;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.titleLength span.count, .contentLength span.count{
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.titleLength span.count.yellow, .contentLength span.count.yellow{
+  color: yellow;
+}
+
+.titleLength span.count.red, .contentLength span.count.red{
+  color: red;
+}
+
+.userShow-title, .userParticipantShow-title, .userSponsorShow-title{
+  margin: 0 auto;
+  padding: 15px;
+  width: 70%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  background-color: SaddleBrown;
+  border-radius: 10px 10px 0 0;
+}
+
+.userParticipantShow-title, .userSponsorShow-title{
+  margin: 60px auto 0;
+}
+
+.userParticipantShow-title i, .userSponsorShow-title i{
+  margin-left: 10px;
+  color: #fff;
+}
+
+.form.view.userShow{
+  margin: 0 auto;
+  padding: 30px;
+  width: 70%;
+  background-color: #ccc;
+  border-radius: 0 0 10px 10px;
+}
+
+.form.view table, .form.view table th, .form.view table td{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form.view table tr{
+  margin: 0;
+  padding: 0;
+}
+
+.table_title{
+  height: 70px;
+  font-size: 2.5rem;
+  line-height: 1;
+  text-align: left;
+  vertical-align: top;
+}
+
+.form.view table tbody tr th{
+  width: 35%;
+  padding: 10px 0;
+  text-align: center;
+  color: #000;
+}
+
+.form.view table tbody tr td{
+  width: 65%;
+  padding: 0 0 0 5%;
+  max-height: 100px;
+  text-align: left;
+  color: #000;
+}
+
+table.detail_profile{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+table.detail_profile tbody, table.detail_profile tbody tr{
+  width: 100%;
+}
+
+table.detail_profile tbody tr th{
+  width: 50%;
+  text-align: left;
+  min-width: 130px;
+}
+
+table.detail_profile tbody tr td{
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  max-width: 350px;
+  word-wrap: break-word;
+}
+
+.form.view.userParticipantShow, .form.view.userSponsorShow{
+  margin: 0 auto;
+  padding: 30px;
+  width: 70%;
+  background-color: #ccc;
+  border-radius: 0 0 10px 10px;
+}
+
+.form.view.userParticipantShow table, .form.view.userSponsorShow table{
+  margin: 0 auto;
+  width: 80%;
+}
+
+.form.view.userParticipantShow table tbody tr th.event_title,
+.form.view.userSponsorShow table tbody tr th.event_title{
+  width: 40%;
+  height: 50px;
+  text-align: left;
+  color: #000;
+}
+
+.form.view.userParticipantShow table tbody tr td,
+.form.view.userSponsorShow table tbody tr td{
+  width: 60%;
+  padding-left: 20%;
+  text-align: left;
+  color: #000;
+}
+
+.container.eventShow, .container.createConfirm{
+  margin: 20px auto 0;
+  padding: 40px;
+  width: 60%;
+  min-height: 100px;
+  max-height: 2000px;
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  text-align: left;
+}
+
+.eventShow-category{
+  margin: 20px 0 0;
+  padding: 10px;
+  width: 25%;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  background-color: yellowgreen;
+  border-radius: 10px;
+}
+
+.eventShow-full{
+  margin: 20px 0 0;
+  padding: 10px;
+  width: 15%;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: Crimson;
+  border-radius: 10px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.createConfirm-category{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.createConfirm-category::before{
+  content: "カテゴリ";
+  margin: 0;
+  padding: 15px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.createConfirm-title{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.createConfirm-title::before{
+  content: "タイトル";
+  margin: 0;
+  padding: 15px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eventShow-title{
+  word-break: break-all;
+  margin: 20px 0 20px;
+  padding: 20px 15px;
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+  text-align: left;
+  color: #000;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.eventShow-image, .createConfirm-image{
+  margin: 0 0 20px;
+  padding: 0;
+  width: 100%;
+}
+
+.eventShow-image img, .createConfirm-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.eventShow-content, .createConfirm-content{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventShow-content::before, .createConfirm-content::before{
+  content: "概要";
+  margin: 0;
+  padding: 15px;
+  width: 110px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventShow-area, .createConfirm-area{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventShow-area::before, .createConfirm-area::before{
+  content: "エリア";
+  margin: 0;
+  padding: 15px;
+  width: 110px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eventShow-place, .createConfirm-place{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventShow-place::before, .createConfirm-place::before{
+  content: "開催場所";
+  margin: 0;
+  padding: 15px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventShow-datetime, .createConfirm-datetime{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventShow-datetime::before, .createConfirm-datetime::before{
+  content: "日時";
+  margin: 0;
+  padding: 15px;
+  width: 110px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eventShow-payment, .createConfirm-payment{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventShow-payment::before, .createConfirm-payment::before{
+  content: "参加料金";
+  margin: 0;
+  padding: 15px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eventShow-peopleCount, .createConfirm-maxpeople{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventShow-peopleCount{
+  width: 100%;
+}
+
+.eventShow-peopleCount::before, .createConfirm-maxpeople::before{
+  content: "募集人数";
+  margin: 0;
+  padding: 15px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventShow-peopleCount .maxpeople{
+  margin: 0;
+  padding: 0;
+}
+
+.eventShow-peopleCount .appendPeople{
+  margin-left: 30%;
+  padding: 15px;
+  height: 100%;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(165, 42, 42, 0.7);
+  border-radius: 0 10px 10px 0;
+}
+
+.eventShow-peopleCount .appendPeople i{
+  margin-left: 10px;
+  color: #fff;
+}
+
+.eventShow-peopleCount span.appendCount{
+  font-size: 2rem;
+  line-height: 1;
+  color: red;
+  font-weight: bold;
+}
+
+.eventShow-peopleCount .appendList{
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.appendList .count{
+  margin: 0;
+  padding: 0;
+}
+
+.appendList ul{
+  margin: 0;
+  padding: 0;
+}
+
+.appendList ul li{
+  margin: 10px 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #000;
+}
+
+.eventShow-sponsor{
+  word-break: break-all;
+  margin: 0 0 20px;
+  padding: 15px 25px 15px 130px;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventShow-sponsor::before{
+  content: "主催者";
+  margin: 0;
+  padding: 15px;
+  width: 110px;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-name, .sponsor-icon, .eventShow-sponsor form{
+  display: inline-block;
+}
+
+.sponsor-icon img{
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.eventShow-sponsor form{
+  margin-left: 10%;
+}
+
+.eventshow-updated_at{
+  word-break: break-all;
+  margin: 30px 0 0;
+  padding: 0;
+  width: 100%;
+  font-size: 1.3rem;
+  line-height: 1;
+  text-align: right;
+  font-style: oblique;
+}

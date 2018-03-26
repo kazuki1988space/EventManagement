@@ -1,0 +1,35 @@
+<div class="mainContainer">
+  <h1 class="pageTitle eventShow">参加者一覧</h1>
+  <div class="container eventShow">
+      <div class="eventShow-title"><%= @event.title %></div>
+      <div class="eventShow-image"><%= image_tag(@event.image.url) if @event.image.present? %></div>
+      <div class="eventShow-content"><%= @event.content %></div>
+      <div class="eventShow-appendCount">このイベントは現在<span class="appendCount"><%= @event.participant_users.count %></span>人が参加予定です
+      <span class="appendList"><%= link_to "参加者一覧 >>", events_path, class: 'btn btn-warning'  %><span>
+      </div>
+      <div class="eventShow-appendPeople">
+        <ul>
+        <% @event.participant_users do |user| %>
+        <li><%= user.name %>さん</li>
+        <% end %>
+        </ul>
+      </div>
+      <div class="eventShow-user">Created By <span><%= @event.user.name %></span></div>
+      <div class="eventShow-icon"><%= image_tag(@event.user.image.thumb.url) if @event.user.image.present? %></span></div>
+      <div class="eventshow-updated_at">Last Updated_at <%= @event.updated_at %></div>
+  </div>
+
+  <% unless @event.user == current_user %>
+    <div class="page-link favorites">
+    <% if @participant.present? %>
+      <%= link_to "参加をキャンセルする", participant_path(event_id: @event.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to "このイベントに参加する", participants_path(event_id: @event.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+    </div>
+  <% end %>
+
+  <div class="page-link toEventIndex">
+  <%= link_to "<< 投稿一覧へ", events_path, class: 'btn btn-default'  %>
+  </div>
+</div>

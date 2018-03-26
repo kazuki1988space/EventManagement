@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+*{
+  box-sizing: border-box;
+  font-family: 'Lato', 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+li{
+  list-style-type: none;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* ここを変更 */
+  color: #333;
+  font-size: 18px;
+  line-height: 18px;
+  position: relative;
+}
+
+.topContaier{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  background-image: url('../assets/image1.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.topPage, .topContaier .page-link{
+  margin: 0;
+  padding: 0;
+  color: #ddd;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+h1.topPage{
+  top: 30%;
+  font-size: 8rem;
+  letter-spacing: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+
+p.topPage{
+  top: 45%;
+  color: #fff;
+}
+
+.topContaier .page-link{
+  top: 50%;
+}
+
+header, footer{
+  margin: 0 auto;
+  text-align: center;
+}
+
+header{
+  width: 100%;
+}
+
+header .navbar.navbar-default{
+  margin: 0;
+  background-color: SaddleBrown;
+  border: none;
+}
+
+header .navbar-header{
+  margin-top: 10px;
+}
+
+header .navbar-header a.navbar-brand{
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 10px;
+  color: #ddd;
+  display: inline-block;
+}
+
+header .collapse.navbar-collapse{
+  float: right;
+}
+
+header .collapse.navbar-collapse ul li a{
+  color: #ddd;
+  padding: 30px 30px 30px 5px;
+}
+
+header .collapse.navbar-collapse ul li i, header .collapse.navbar-collapse ul li i + a{
+  display: inline-block;
+  color: #ddd;
+}
+
+.topContaier .btn-warning{
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.flash_msg{
+  margin: 0 auto;
+  text-align: center;
+  color: red;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+
+footer{
+  width: 100%;
+  background-color: SaddleBrown;
+  padding: 20px 0 10px 0;
+  color: #ddd;
+  margin: auto;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+}

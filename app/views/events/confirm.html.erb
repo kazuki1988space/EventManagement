@@ -1,0 +1,44 @@
+<div class="mainContainer">
+  <h1 class="pageTitle createConfirm">投稿内容確認</h1>
+  <h3 class="confirm_sentence">以下の内容で投稿しますか？</h3>
+
+  <%= form_with(model: @event, url: events_path, local: true) do |form| %>
+    <%= form.hidden_field :category %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :area %>
+    <%= form.hidden_field :place %>
+    <%= form.hidden_field :date %>
+    <%= form.hidden_field :payment %>
+    <%= form.hidden_field :maxpeople %>
+    <div class="container createConfirm">
+      <div class="createConfirm-category"><%= @event.category %></div>
+      <div class="createConfirm-title"><%= @event.title %></div>
+      <div class="createConfirm-image"><%= image_tag(@event.image.url) if @event.image.present? %></div>
+      <div class="createConfirm-content"><%= @event.content %></div>
+      <div class="createConfirm-area"><%= @event.area %></div>
+      <div class="createConfirm-place"><%= @event.place %></div>
+      <div class="createConfirm-datetime"><%= @event.date.to_s(:ja) %></div>
+      <div class="createConfirm-payment"><%= @event.payment %>円</div>
+      <div class="createConfirm-maxpeople"><%= @event.maxpeople %>人</div>
+      <%= hidden_field_tag :"cache[image]", @event.image.cache_name %>
+    </div>
+    <div class="page-link toEventRegist">
+      <%= form.submit  "登録", class: 'btn btn-warning' %>
+    </div>
+  <% end %>
+
+  <div class="page-link toNewEvent">
+  <%= form_with(model: @event, url: new_event_path, local: true, method: 'get') do |form| %>
+    <%= form.hidden_field :category %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :area %>
+    <%= form.hidden_field :place %>
+    <%= form.hidden_field :date %>
+    <%= form.hidden_field :payment %>
+    <%= form.hidden_field :maxpeople %>
+    <%= form.submit "戻る", name: 'back', class: 'btn btn-default' %>
+  <% end %>
+  </div>
+</div>

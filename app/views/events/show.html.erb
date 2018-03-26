@@ -1,0 +1,50 @@
+<div class="mainContainer">
+  <h1 class="pageTitle eventShow">イベント詳細</h1>
+  <div class="container eventShow">
+      <div class="eventShow-category"><%= @event.category %></div>
+      <% if @event.maxpeople - @event.participant_users.count < 5 %>
+      <div class="eventShow-full">定員間近！</div>
+      <% end %>
+      <div class="eventShow-title"><%= @event.title %></div>
+      <div class="eventShow-image"><%= image_tag(@event.image.url) if @event.image.present? %></div>
+      <div class="eventShow-content"><%= @event.content %></div>
+      <div class="eventShow-area"><%= @event.area %></div>
+      <div class="eventShow-place"><%= @event.place %></div>
+      <div class="eventShow-datetime"><%= @event.date.to_s(:ja) %>〜</div>
+      <duv class="eventShow-payment"><%= @event.payment %>円</duv>
+      <div class="eventShow-peopleCount">
+        <div class="maxpeople"><%= @event.maxpeople %>人</div>
+        <div class="appendPeople">現在の参加者一覧<i class="fas fa-angle-double-down"></i></div>
+        <div class="appendList">
+          <div class="count"><span class="appendCount"><%= @event.participant_users.count %></span>人が参加予定</div>
+          <ul>
+            <% @event.participant_users.each do |user| %>
+            <li><%= user.name %>さん</li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="eventShow-sponsor">
+        <div class="sponsor-name"><%= @event.user.name %></div>
+        <div class="sponsor-icon"><%= image_tag(@event.user.image.thumb.url) if @event.user.image.present? %></div>
+        <%= form_with(model: @event, url: new_question_path, local: true, method: 'get') do |form| %>
+        <%= form.submit "主催者へ問合せ >>", class: 'btn btn-warning' %>
+        <% end %>
+      </div>
+      <div class="eventshow-updated_at">イベント投稿日 <%= @event.updated_at.to_s(:ja) %></div>
+  </div>
+
+  <% unless @event.user == current_user %>
+    <div class="page-link participants">
+    <% if @participant.present? %>
+      <%= link_to "参加をキャンセル", participant_path(event_id: @event.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to "このイベントに参加", participants_path(event_id: @event.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+    </div>
+  <% end %>
+
+  <div class="page-link toEventIndex">
+  <%= link_to "<< 投稿一覧", events_path, class: 'btn btn-default'  %>
+  </div>
+</div>

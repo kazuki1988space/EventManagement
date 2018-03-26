@@ -1,0 +1,90 @@
+<div class="form submit newEvent">
+  <%= form_with(model: @event, url: choose_new_or_edit, local: true) do |form| %>
+
+  <% if @event.errors.any? %>
+  <div class="error_explanation">
+      <h2><%= @event.errors.count %>件のエラーがあります。</h2>
+      <ul>
+          <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+  </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <th><%= form.label :カテゴリ %></th>
+      <td><%= form.select :category, [["セミナー・勉強会", "セミナー・勉強会"], ["異業種交流", "異業種交流"],
+      ["恋活・婚活", "恋活・婚活"], ["スポーツ", "スポーツ"], ["趣味", "趣味"],
+      ["その他", "その他"]], class: 'category' %></td>
+    </tr>
+    <tr>
+      <th><%= form.label :タイトル %></div></th>
+      <td>
+        <div class="titleLength">あと<span class="count"></span>文字入力できます</div>
+          <%= form.text_field :title, class: 'title', placeholder: '開催するイベントのタイトルを入力して下さい' %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= form.label :概要 %></th>
+      <td>
+        <div class="contentLength">あと<span class="count"></span>文字入力できます</div>
+        <%= form.text_area :content, class: 'content', placeholder: '開催するイベントの概要を入力して下さい' %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= form.label :画像 %></th>
+      <td><%= form.file_field :image, id: :event_image, class: 'image' %></td>
+      <%= form.hidden_field :image_cache %>
+    </tr>
+    <tr>
+      <th><%= form.label :開催エリア %></th>
+      <td>
+        <%= form.select :area, [["新宿", "新宿"], ["原宿・表参道", "原宿・表参道"], ["渋谷", "渋谷"],
+        ["池袋", "池袋"], ["六本木・麻布", "六本木・麻布"], ["赤坂", "赤坂"], ["銀座・有楽町", "銀座・有楽町"],
+        ["丸の内・八重洲", "丸の内・八重洲"], ["品川", "品川"], ["上野", "上野"], ["お台場", "お台場"],
+         ["その他", "その他"]], class: 'area' %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= form.label :開催場所 %></th>
+      <td>
+        <%= form.text_field :place, class: 'place', placeholder: '開催するイベントの詳細な場所を入力して下さい' %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= form.label :日時 %></th>
+      <td>
+          <%= form.datetime_select :date,
+            start_year: Time.now.year,
+            end_year: Time.now.year + 81,
+            use_month_numbers: true,
+            minute_step: 15,
+            date_separator: ' / ' %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= form.label :参加料金 %></th>
+      <td><%= form.number_field :payment, class: 'payment' %>円</td>
+    </tr>
+    <tr>
+      <th><%= form.label :募集人数 %></th>
+      <td><%= form.number_field :maxpeople, class: 'maxpeople' %>人</td>
+    </tr>
+  </table>
+
+  <div class="page-link toConfirmEvent">
+  <% if choose_new_or_edit == confirm_events_path %>
+    <%= form.submit "投稿", class: 'btn btn-warning' %>
+  <% else %>
+    <%= form.submit "編集", class: 'btn btn-warning' %>
+  <% end %>
+  </div>
+
+  <% end %>
+</div>
+
+<div class="page-link toEventIndex">
+<%= link_to "<< 開催イベント一覧", events_path, class: 'btn btn-default' %>
+</div>
