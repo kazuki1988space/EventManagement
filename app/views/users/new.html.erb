@@ -1,5 +1,5 @@
 <div class="mainContainer">
-  <h2 class="pageTitle userRegister">ユーザ新規登録</h2>
+  <div class="pageTitle userRegister">新規登録</div>
   <div class="container userRegister">
 
     <% if @user.errors.any? %>
@@ -21,19 +21,19 @@
       <table>
         <tr>
           <th><%= f.label "名前" %></th>
-          <td><%= f.text_field :name %></td>
+          <td><%= f.text_field :name, class:'name', placeholder: '30字以内' %></td>
         </tr>
         <tr>
           <th><%= f.label "メールアドレス" %></th>
-          <td><%= f.email_field :email %></td>
+          <td><%= f.email_field :email, class:'email', placeholder: '255字以内' %></td>
         </tr>
         <tr>
           <th><%= f.label "パスワード" %></th>
-          <td><%= f.password_field :password %></td>
+          <td><%= f.password_field :password, class:'password', placeholder: '6〜20字' %></td>
         </tr>
         <tr>
           <th><%= f.label "パスワード(再入力)" %></th>
-          <td><%= f.password_field :password_confirmation %></td>
+          <td><%= f.password_field :password_confirmation, class:'password_confirmation', placeholder: '6〜20字' %></td>
         </tr>
       </table>
       <div class="page-link toUserProfile">

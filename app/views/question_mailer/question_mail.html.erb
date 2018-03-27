@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>あなたへお問い合わせが来ております</h1>
+      <p>差出人： <%= User.find_by(id: @question.from_user_id).name %>様</p>
+      <p>タイトル: <%= @question.title %></p>
+      <p>内容: <%= @question.content %></p>
+      <p>以上となります。ご確認の程、よろしくお願い致します。</p>
+  </body>
+</html>

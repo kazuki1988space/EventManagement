@@ -1,12 +1,12 @@
 <div class="mainContainer">
-  <h1 class="pageTitle userShow">マイページ</h1>
+  <div class="pageTitle userShow">マイページ</div>
   <div class="container userShow">
       <div class="userShow-title">プロフィール</div>
       <div class="form view userShow">
         <table>
           <tr>
             <th>
-              <%= image_tag @user.image.thumb.url if @user.image.present? %>
+              <%= image_tag @user.icon.thumb.url if @user.icon.present? %>
             </th>
             <td>
               <table class="detail_profile">
@@ -33,7 +33,7 @@
           <% current_user.events.each do |event| %>
             <tr>
               <th class="event_title"><%= event.title %></th>
-              <td><%= link_to "イベント詳細 >>", event_path(event.id), class: 'btn btn-info' %></td>
+              <td><%= link_to event_path(event.id), class: 'btn btn-info' do %>イベント詳細<i class="fa fa-angle-double-right"></i><% end %></td>
             </tr>
           <% end %>
         </table>
@@ -45,13 +45,13 @@
           <% current_user.participant_events.each do |event| %>
             <tr>
               <th class="event_title"><%= event.title %></th>
-              <td><%= link_to "イベント詳細 >>", event_path(event.id), class: 'btn btn-info' %></td>
+              <td><%= link_to event_path(event.id), class: 'btn btn-info' do %>イベント詳細<i class="fa fa-angle-double-right"></i><% end %></td>
             </tr>
           <% end %>
         </table>
       </div>
   </div>
   <div class="page-link toEventIndex">
-    <%= link_to "<< 投稿一覧", events_path, class: 'btn btn-default'  %>
+    <%= link_to events_path, class: 'btn btn-default' do %><i class="fas fa-angle-double-left"></i>開催イベント一覧<% end %>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="mainContainer">
-  <h2 class="pageTitle newQuestion">問合せフォーム</h2>
+  <div class="pageTitle newQuestion">お問い合わせフォーム</div>
   <div class="container newQuestion">
     <div class="form submit newEvent">
       <%= form_with(model: @question, url: confirm_questions_path, local: true) do |form| %>
@@ -17,14 +17,21 @@
 
       <table>
         <tr>
-          <th><%= form.label :タイトル %></th>
-          <td><%= form.text_field :title %></td>
+          <th><%= form.label :タイトル, class: 'title' %></th>
+          <td>
+            <div class="titleLength">あと<span class="count"></span>文字入力できます</div>
+            <%= form.text_field :title, class: 'titles', placeholder: 'お問い合わせタイトルを入力して下さい（80字以内）' %>
+          </td>
         </tr>
         <tr>
-          <th><%= form.label :問合せ内容 %></th>
-          <td><%= form.text_area :content %></td>
+          <th><%= form.label :問合せ内容, class: 'content' %></th>
+          <td>
+            <div class="contentLength">あと<span class="count"></span>文字入力できます</div>
+            <%= form.text_area :content, class: 'content', placeholder: 'お問い合わせ内容を入力して下さい（1000字以内）' %>
+          </td>
         </tr>
       </table>
+      <%= form.hidden_field :to_user_id %>
 
       <div class="page-link toConfirmQuestion">
         <%= form.submit "作成", class: 'btn btn-warning' %>

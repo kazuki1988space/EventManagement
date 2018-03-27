@@ -1,12 +1,14 @@
 <div class="mainContainer">
-  <h1 class="pageTitle createConfirm">投稿内容確認</h1>
-  <h3 class="confirm_sentence">以下の内容で投稿しますか？</h3>
+  <div class="pageTitle createConfirm">投稿内容確認</div>
+  <h3 class="confirm_sentence">以下の内容でお問い合わせしますか？</h3>
 
   <%= form_with(model: @question, url: questions_path, local: true) do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
-      <div class="createConfirm-title"><%= @event.title %></div>
-      <div class="createConfirm-content"><%= @event.content %></div>
+    <%= form.hidden_field :to_user_id %>
+    <div class="container createConfirm">
+      <div class="createConfirm-title"><%= @question.title %></div>
+      <div class="createConfirm-content"><%= @question.content %></div>
     </div>
     <div class="page-link toQuestionRegist">
       <%= form.submit  "登録", class: 'btn btn-warning' %>
@@ -17,6 +19,7 @@
   <%= form_with(model: @question, url: new_question_path, local: true, method: 'get') do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
+    <%= form.hidden_field :to_user_id %>
     <%= form.submit "戻る", name: 'back', class: 'btn btn-default' %>
   <% end %>
   </div>

@@ -61,7 +61,7 @@ $(document).on('turbolinks:load', function() {
   titleCount.text(maxTitleLength);
   contentCount.text(maxContentLength);
 
-  newEvent.find('input.title').on('keydown keyup keypress change', function(){
+  newEvent.find('input.titles').on('keydown keyup keypress change', function(){
     var valueTitleLength = $(this).val().length;
     var titleCountDown = maxTitleLength - valueTitleLength;
     titleCount.text(titleCountDown);

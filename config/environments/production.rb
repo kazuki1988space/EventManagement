@@ -54,7 +54,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
-  config.action_mailer.default_url_options = { host: 'infinite-caverns-36557.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'limitless-mesa-30336.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {

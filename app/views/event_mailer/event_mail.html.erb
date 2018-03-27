@@ -1,12 +1,20 @@
-<h1>記事を投稿しました！</h1>
-
-<h4>投稿内容の確認</h4>
-
-<p>カテゴリ: <%= @event.category %></p>
-<p>タイトル: <%= @event.title %></p>
-<p>内容: <%= @event.content %></p>
-<p>開催エリア: <%= @event.area %></p>
-<p>開催場所: <%= @event.place %></p>
-<p>日時: <%= @event.date %></p>
-<p>参加料金: <%= @event.payment %></p>
-<p>募集人数: <%= @event.maxpeople %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>イベントを新規作成しました</h1>
+      <p>EVENTSへの新規イベント企画が完了しました。</p>
+      <p>カテゴリ: <%= @event.category %></p>
+      <p>タイトル: <%= @event.title %></p>
+      <p>内容: <%= @event.content %></p>
+      <p>開催エリア: <%= @event.area %></p>
+      <p>開催場所: <%= @event.place %></p>
+      <p>日時: <%= @event.date %></p>
+      <p>参加料金: <%= @event.payment %></p>
+      <p>募集人数: <%= @event.maxpeople %></p>
+      <br>
+      <p>イベントを企画頂きありがとうございます。どうぞ素敵なイベントにして下さい。</p>
+  </body>
+</html>

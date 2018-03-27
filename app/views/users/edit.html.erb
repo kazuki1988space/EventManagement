@@ -1,5 +1,5 @@
 <div class="mainContainer">
-  <h2 class="pageTitle userRegister">プロフィール編集</h2>
+  <div class="pageTitle userRegister">プロフィール編集</div>
   <div class="container userRegister">
 
     <% if @user.errors.any? %>
@@ -21,8 +21,8 @@
       <table>
         <tr>
           <th><%= f.label "プロフィール画像" %></th>
-          <td><%= f.file_field :image, id: :user_image %></td>
-          <%= f.hidden_field :image_cache %>
+          <td><%= f.file_field :icon, id: :user_image %></td>
+          <%= f.hidden_field :icon_cache %>
         </tr>
         <tr>
           <th><%= f.label "名前" %></th>

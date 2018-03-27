@@ -20,26 +20,26 @@
       ["その他", "その他"]], class: 'category' %></td>
     </tr>
     <tr>
-      <th><%= form.label :タイトル %></div></th>
+      <th><%= form.label :タイトル, class: 'title' %></div></th>
       <td>
         <div class="titleLength">あと<span class="count"></span>文字入力できます</div>
-          <%= form.text_field :title, class: 'title', placeholder: '開催するイベントのタイトルを入力して下さい' %>
+          <%= form.text_field :title, class: 'titles', placeholder: 'イベントのタイトルを入力して下さい（80字以内）' %>
       </td>
     </tr>
     <tr>
-      <th><%= form.label :概要 %></th>
+      <th><%= form.label :概要, class: 'content' %></th>
       <td>
         <div class="contentLength">あと<span class="count"></span>文字入力できます</div>
-        <%= form.text_area :content, class: 'content', placeholder: '開催するイベントの概要を入力して下さい' %>
+        <%= form.text_area :content, class: 'content', placeholder: 'イベントの概要を入力して下さい（1000字以内）' %>
       </td>
     </tr>
     <tr>
-      <th><%= form.label :画像 %></th>
+      <th><%= form.label :画像, class: 'image' %></th>
       <td><%= form.file_field :image, id: :event_image, class: 'image' %></td>
       <%= form.hidden_field :image_cache %>
     </tr>
     <tr>
-      <th><%= form.label :開催エリア %></th>
+      <th><%= form.label :開催エリア, class: 'area' %></th>
       <td>
         <%= form.select :area, [["新宿", "新宿"], ["原宿・表参道", "原宿・表参道"], ["渋谷", "渋谷"],
         ["池袋", "池袋"], ["六本木・麻布", "六本木・麻布"], ["赤坂", "赤坂"], ["銀座・有楽町", "銀座・有楽町"],
@@ -48,13 +48,13 @@
       </td>
     </tr>
     <tr>
-      <th><%= form.label :開催場所 %></th>
+      <th><%= form.label :開催場所, class: 'place' %></th>
       <td>
-        <%= form.text_field :place, class: 'place', placeholder: '開催するイベントの詳細な場所を入力して下さい' %>
+        <%= form.text_field :place, class: 'place', placeholder: 'イベントの詳細場所を入力して下さい（80文字以内）' %>
       </td>
     </tr>
     <tr>
-      <th><%= form.label :日時 %></th>
+      <th><%= form.label :日時, class: 'date' %></th>
       <td>
           <%= form.datetime_select :date,
             start_year: Time.now.year,
@@ -65,11 +65,11 @@
       </td>
     </tr>
     <tr>
-      <th><%= form.label :参加料金 %></th>
+      <th><%= form.label :参加料金, class: 'payment' %></th>
       <td><%= form.number_field :payment, class: 'payment' %>円</td>
     </tr>
     <tr>
-      <th><%= form.label :募集人数 %></th>
+      <th><%= form.label :募集人数, class: 'maxpeople' %></th>
       <td><%= form.number_field :maxpeople, class: 'maxpeople' %>人</td>
     </tr>
   </table>
@@ -86,5 +86,6 @@
 </div>
 
 <div class="page-link toEventIndex">
-<%= link_to "<< 開催イベント一覧", events_path, class: 'btn btn-default' %>
+<%= link_to events_path, class: 'btn btn-default' do %><i class="fas fa-angle-double-left"></i>開催イベント一覧<% end %>
+
 </div>

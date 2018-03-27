@@ -1,5 +1,5 @@
 <div class="mainContainer">
-  <h1 class="pageTitle eventShow">イベント詳細</h1>
+  <div class="pageTitle eventShow">イベント詳細</div>
   <div class="container eventShow">
       <div class="eventShow-category"><%= @event.category %></div>
       <% if @event.maxpeople - @event.participant_users.count < 5 %>
@@ -16,19 +16,22 @@
         <div class="maxpeople"><%= @event.maxpeople %>人</div>
         <div class="appendPeople">現在の参加者一覧<i class="fas fa-angle-double-down"></i></div>
         <div class="appendList">
-          <div class="count"><span class="appendCount"><%= @event.participant_users.count %></span>人が参加予定</div>
+          <div class="count">
+            <span class="appendCount"><%= @event.participant_users.count %></span>人が参加予定です
+          </div>
           <ul>
             <% @event.participant_users.each do |user| %>
-            <li><%= user.name %>さん</li>
+            <li>・<%= user.name %>さん</li>
             <% end %>
           </ul>
         </div>
       </div>
       <div class="eventShow-sponsor">
         <div class="sponsor-name"><%= @event.user.name %></div>
-        <div class="sponsor-icon"><%= image_tag(@event.user.image.thumb.url) if @event.user.image.present? %></div>
+        <div class="sponsor-icon"><%= image_tag(@event.user.icon.thumb.url) if @event.user.icon.present? %></div>
         <%= form_with(model: @event, url: new_question_path, local: true, method: 'get') do |form| %>
-        <%= form.submit "主催者へ問合せ >>", class: 'btn btn-warning' %>
+        <%= form.hidden_field :user_id %>
+        <%= form.submit "主催者へ問い合わせ >>", class: 'btn btn-warning' %>
         <% end %>
       </div>
       <div class="eventshow-updated_at">イベント投稿日 <%= @event.updated_at.to_s(:ja) %></div>
@@ -45,6 +48,6 @@
   <% end %>
 
   <div class="page-link toEventIndex">
-  <%= link_to "<< 投稿一覧", events_path, class: 'btn btn-default'  %>
+  <%= link_to events_path, class: 'btn btn-default' do %><i class="fas fa-angle-double-left"></i>開催イベント一覧<% end %>
   </div>
 </div>

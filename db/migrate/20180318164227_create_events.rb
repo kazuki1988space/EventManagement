@@ -9,7 +9,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.datetime :date
       t.integer :payment
       t.integer :maxpeople
-      t.string :image
+      t.text :image
       t.integer :user_id
       t.timestamps
     end

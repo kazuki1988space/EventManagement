@@ -1,5 +1,5 @@
 <div class="mainContainer">
-  <h1 class="pageTitle logIn">ログイン</h1>
+  <div class="pageTitle logIn">ログイン</div>
   <div class="container logIn">
 
     <div class="form submit logIn">
@@ -7,11 +7,11 @@
       <table>
           <tr>
             <th><%= f.label "メールアドレス" %></th>
-            <td><%= f.email_field :email %></td>
+            <td><%= f.email_field :email, class:'email', placeholder: '255字以内' %></td>
           </tr>
           <tr>
             <th><%= f.label "パスワード" %></th>
-            <td><%= f.password_field :password %></td>
+            <td><%= f.password_field :password, class:'password', placeholder: '6〜20字' %></td>
           </tr>
       </table>
       <div class="page-link toUserShow">

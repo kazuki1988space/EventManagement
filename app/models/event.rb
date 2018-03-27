@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   has_many :participant_users, through: :participants, source: :user
 
   validates :category, presence: true
-  validates :title, presence: true, length: {maximum: 100}
+  validates :title, presence: true, length: {maximum: 80}
   validates :content, presence: true, length: {maximum: 1000}
   validates :image, presence: true
   validates :area, presence: true

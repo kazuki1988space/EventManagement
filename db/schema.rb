@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180318164326) do
     t.datetime "date"
     t.integer "payment"
     t.integer "maxpeople"
-    t.string "image"
+    t.text "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180318164326) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.text "image"
+    t.text "icon"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -28,11 +28,11 @@
 .form.submit table tbody tr th{
   width: 35%;
   text-align: right;
-  color: #ddd;
 }
 
 .form.submit table tbody tr th label{
-  padding: 20px 0 0;
+  padding: 10px 0 30px;
+  color: #000;
 }
 
 .form.submit table tbody tr td{
@@ -42,18 +42,28 @@
 }
 
 .form.submit table tbody tr td input{
+  margin: 0 0 25px;
+  padding: 10px 15px;
   width: 50%;
-  padding: 10px 0 0;
-  background-color: #000;
-  border: none;
+  font-size: 16px;
+  line-height: 1;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
   outline: none;
-  border-bottom: 2px solid #ddd;
-  color: #fff;
+}
+
+.form.submit table tbody tr td input:focus{
+  box-shadow: 0 0 7px #1abc9c;
+  background-color: #fff;
+  border: 1px solid #1abc9c;
+  border-radius: 10px;
 }
 
 .form.submit.newEvent table{
+  margin: 0 18% 0 12%;
   width: 70%;
-  margin: 0 auto;
 }
 
 .form.view table th, .form.view table td{
@@ -63,19 +73,23 @@
 .form.submit.newEvent table tbody tr th{
   width: 20%;
   text-align: center;
-  color: #ddd;
+  color: #000;
 }
 
 .form.submit.newEvent table tbody tr th label{
-  margin: 0;
+  margin: 15px 0;
   padding: 15px 0;
+}
+
+.form.submit.newEvent table tbody tr th label.title, .form.submit.newEvent table tbody tr th label.content{
+  margin-top: 50px;
 }
 
 .form.submit.newEvent table tbody tr td{
   width: 80%;
   padding: 0;
   text-align: left;
-  color: #ddd;
+  color: #000;
 }
 
 .form.submit.newEvent table tbody tr td input, .form.submit.newEvent table tbody tr td textarea{
@@ -100,6 +114,7 @@
 }
 
 .form.submit.newEvent table tbody tr td select{
+  margin: 10px 0;
   color: #000;
 }
 
@@ -114,23 +129,24 @@
 }
 
 .form.submit.newEvent table tbody tr td input.image{
-  background-color: #000;
-  color: #ddd;
+  background-color: #fff;
+  color: #000;
   border: none;
 }
 
 .form.submit.newEvent table tbody tr td input.place{
+  margin: 10px 0;
   height: 50px;
 }
 
 .form.submit.newEvent table tbody tr td input.payment{
-  margin-right: 10px;
+  margin: 10px 10px 10px 0;
   width: 120px;
   height: 50px;
 }
 
 .form.submit.newEvent table tbody tr td input.maxpeople{
-  margin-right: 10px;
+  margin: 10px 10px 10px 0;
   width: 90px;
   height: 50px;
 }
@@ -147,7 +163,7 @@
 }
 
 .titleLength span.count, .contentLength span.count{
-  color: #fff;
+  color: #000;
   font-size: 1.8rem;
   font-weight: bold;
 }
@@ -178,6 +194,10 @@
 .userParticipantShow-title i, .userSponsorShow-title i{
   margin-left: 10px;
   color: #fff;
+}
+
+.form.view.userSponsorShow table tr td a i, .form.view.userParticipantShow table tr td a i{
+  margin-left: 5px;
 }
 
 .form.view.userShow{
@@ -633,7 +653,7 @@ table.detail_profile tbody tr td{
 }
 
 .eventShow-peopleCount .appendList{
-  margin: 20px 0 0;
+  margin: 30px 0 0;
   padding: 0;
 }
 

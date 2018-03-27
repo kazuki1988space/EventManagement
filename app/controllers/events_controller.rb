@@ -18,6 +18,7 @@ class EventsController < ApplicationController
 
   def confirm
     @event = Event.new(event_params)
+    @event.date = Time.zone.local(params["event"]["date(1i)"].to_i, params["event"]["date(2i)"].to_i, params["event"]["date(3i)"].to_i, params["event"]["date(4i)"].to_i, params["event"]["date(5i)"].to_i)
     @event.user_id = current_user.id
     render "new" if @event.invalid?
   end

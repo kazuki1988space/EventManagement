@@ -1,5 +1,5 @@
 <div class="mainContainer">
-  <h1 class="pageTitle eventIndex">開催イベント一覧</h1>
+  <div class="pageTitle eventIndex">開催イベント一覧</div>
 
   <div class="search-title">イベント検索<i class="fas fa-angle-double-down"></i></div>
   <div class="search_form">
@@ -20,7 +20,7 @@
       <div class="block"></div>
       <%= f.label :date, "日時" %>
       <%= f.date_select :date_gt, {start_year: Time.now.year, end_year: Time.now.year + 81, use_month_numbers: true, date_separator: ' / '}, class: "date_gt" %>〜
-      <%= f.date_select :date_lt, {start_year: Time.now.year, end_year: Time.now.year + 81, use_month_numbers: true, date_separator: ' / '}, class: "date_lt" %>
+      <%= f.date_select :date_lteq_end_of_day, {start_year: Time.now.year, end_year: Time.now.year + 81, use_month_numbers: true, date_separator: ' / '}, class: "date_lt" %>
       <div class="block"></div>
       <%= f.label :payment, "参加料金" %>
       <%= f.number_field :payment_gt, class: "payment_gt" %>円 〜
@@ -58,12 +58,18 @@
               <div class="event-datetime"><%= event.date.to_s(:mdmn) %>〜</div>
               <div class="event-links">
                 <ul>
-                  <li><%= link_to "詳細 >>", event_path(event.id), class: 'btn btn-default' %></li>
+                  <li>
+                    <%= link_to event_path(event.id), class: 'btn btn-default' do %>詳細<i class="fa fa-angle-double-right"></i><% end %>
+                  </li>
                   <% unless current_user.nil? %>
                     <% if event.user_id == current_user.id %>
-                    <li><%= link_to "編集 >>", edit_event_path(event.id), class: 'btn btn-info' %></li>
-                    <li><%= link_to "削除", event_path(event.id), method: :delete,
-                     data: { confirm: '削除していいですか？' }, class: 'btn btn-danger' %></li>
+                    <li>
+                      <%= link_to edit_event_path(event.id), class: 'btn btn-info' do %>編集<i class="fa fa-angle-double-right"></i><% end %>
+                    </li>
+                    <li>
+                      <%= link_to "削除", event_path(event.id), method: :delete,
+                     data: { confirm: '削除してよろしいですか？' }, class: 'btn btn-danger' %>
+                    </li>
                      <% end %>
                   <% end %>
                 </ul>
@@ -76,7 +82,7 @@
   </div>
 
   <div class="page-link toNewEvent">
-  <%= link_to "新規イベント投稿", new_event_path, class: 'btn btn-warning' %>
+  <%= link_to new_event_path, class: 'btn btn-warning' do %>新規イベント投稿<i class="fa fa-angle-double-right"></i><% end %>
   </div>
 
 </div>

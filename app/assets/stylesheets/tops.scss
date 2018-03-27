@@ -25,14 +25,12 @@ body{
   position: relative;
 }
 
-.topContaier{
+.topImage{
+  margin-top: 60px;
   width: 100%;
-  height: 100%;
-  text-align: center;
-  position: relative;
+  height: 800px;
   background-image: url('../assets/image1.jpg');
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .topPage, .topContaier .page-link{
@@ -47,7 +45,7 @@ body{
 h1.topPage{
   top: 30%;
   font-size: 8rem;
-  letter-spacing: 18px;
+  letter-spacing: 28px;
   color: #fff;
   font-weight: bold;
 }
@@ -57,17 +55,16 @@ p.topPage{
   color: #fff;
 }
 
-.topContaier .page-link{
-  top: 50%;
-}
-
 header, footer{
   margin: 0 auto;
+  width: 100%;
   text-align: center;
+  position: fixed;
+  z-index: 999;
 }
 
 header{
-  width: 100%;
+  top: 0;
 }
 
 header .navbar.navbar-default{
@@ -84,7 +81,7 @@ header .navbar-header a.navbar-brand{
   float: left;
   font-size: 28px;
   font-weight: bold;
-  letter-spacing: 10px;
+  letter-spacing: 15px;
   color: #ddd;
   display: inline-block;
 }
@@ -95,17 +92,13 @@ header .collapse.navbar-collapse{
 
 header .collapse.navbar-collapse ul li a{
   color: #ddd;
-  padding: 30px 30px 30px 5px;
+  padding: 30px 5px 30px 30px;
 }
 
-header .collapse.navbar-collapse ul li i, header .collapse.navbar-collapse ul li i + a{
+header .collapse.navbar-collapse ul li a i{
+  margin-right: 5px;
   display: inline-block;
   color: #ddd;
-}
-
-.topContaier .btn-warning{
-  font-size: 16px;
-  padding: 10px 20px;
 }
 
 .flash_msg{
@@ -113,18 +106,33 @@ header .collapse.navbar-collapse ul li i, header .collapse.navbar-collapse ul li
   text-align: center;
   color: red;
   position: absolute;
-  top: 100px;
+  top: 40px;
   left: 0;
   right: 0;
 }
 
-footer{
+.layerImage{
   width: 100%;
+  min-height: 715px;
+  background-image: url('../assets/image8.jpg');
+  background-size: 100% auto;
+}
+
+.layerTransparent{
+  width: 100%;
+  min-height: 715px;
+  background-color:		rgba(255,255,255,0.5);
+}
+
+.topContaier{
+
+  text-align: center;
+}
+
+footer{
   background-color: SaddleBrown;
-  padding: 20px 0 10px 0;
+  padding: 20px 0 10px;
   color: #ddd;
-  margin: auto;
-  font-size: 12px;
-  position: fixed;
+  font-size: 1.5rem;
   bottom: 0;
 }

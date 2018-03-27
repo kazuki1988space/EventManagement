@@ -28,27 +28,31 @@
           <div id="gnavi" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <% if logged_in? %>
-              <li><i class="fas fa-clipboard"></i><a href="/events#index">開催イベント一覧</a></li>
-              <li><i class="fas fa-user"></i><%= link_to "マイページ", user_path(current_user.id) %></a></li>
-              <li><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+              <li><a href="/events#index"><i class="fas fa-clipboard"></i>開催イベント一覧</a></li>
+              <li><%= link_to user_path(current_user.id) do %><i class="fas fa-user"></i>マイページ<% end %></li>
+              <li><%= link_to session_path(current_user.id), method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
               <% else %>
-              <li><i class="fas fa-sign-in-alt"></i><%= link_to "ログイン", new_session_path %></li>
-              <li><i class="fas fa-user-plus"></i><%= link_to "新規登録", new_user_path %></li>
+              <li><%= link_to new_session_path do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %></li>
+              <li><%= link_to new_user_path do %><i class="fas fa-user-plus"></i>新規登録<% end %></li>
               <% end %>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+    <div class="layerImage">
+      <div class="layerTransparent">
 
-    <div class="flash_msg">
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
+        <div class="flash_msg">
+          <% flash.each do |key, value| %>
+            <%= content_tag(:div, value, class: "#{key}") %>
+          <% end %>
+        </div>
+
+        <%= yield %>
+
+      </div>
     </div>
-
-    <%= yield %>
-
     <footer>
       <p>DIVE INTO VODE 2017年10月期</p>
       <p>並木　一樹</p>

@@ -2,9 +2,9 @@ class QuestionsController < ApplicationController
 
   def new
     if params[:back]
-      @question = Question.new(event_params)
+      @question = Question.new(question_params)
     else
-      @question = Question.new
+      @question = Question.new(to_user_id: params[:event][:user_id])
     end
   end
 
@@ -16,10 +16,9 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.from_user_id = current_user.id
-    @question.to_user_id = @event.user_id
     if @question.save
-      EventMailer.event_mail(@event).deliver
-      redirect_to events_path
+      QuestionMailer.question_mail(@question).deliver
+      redirect_to event_path(@question.to_user_id)
     else
       render "new"
     end
@@ -27,7 +26,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:title, :content)
+    params.require(:question).permit(:title, :content, :to_user_id)
   end
 
   def set_params

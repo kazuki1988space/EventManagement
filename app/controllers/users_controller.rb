@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      NewUserMailer.new_user_mail(@user).deliver
       redirect_to new_session_path
     else
       redirect_to new_user_path
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :icon)
   end
 
   def set_params

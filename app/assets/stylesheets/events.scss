@@ -1,4 +1,6 @@
 .mainContainer{
+  margin: 0;
+  width: 100%;
   text-align: center;
 }
 
@@ -27,16 +29,15 @@
 }
 
 .pageTitle{
+  margin: 60px;
+  padding: 80px 0 0;
+  font-size: 4rem;
   font-weight: bold;
   letter-spacing: 5px;
 }
 
 .confirm_sentence{
   margin: 0 0 30px;
-}
-
-.pageTitle{
-  margin: 60px;
 }
 
 i.fa-angle-double-down{
@@ -250,8 +251,8 @@ select#q_date_lt_1i{
   word-break: break-all;
   padding: 5px;
   width: 100%;
-  min-height: 60px;
-  max-height: 120px;
+  min-height: 55px;
+  max-height: 107px;
   position: absolute;
   top: 290px;
   left: 0;
@@ -287,16 +288,31 @@ select#q_date_lt_1i{
   padding-left: 10%;
 }
 
-.page-link{
-  margin: 50px auto 150px;
+.event-links ul li a i{
+  margin-left: 5px;
 }
 
-.page-link.toConfirmEvent, .page-link.participants, .page-link.toEventRegist{
-  margin: 50px auto;
+.page-link{
+  margin: 40px auto 50px;
+  padding: 0 0 90px;
+}
+
+.page-link.toConfirmEvent, .page-link.participants, .page-link.toEventRegist, .toConfirmQuestion{
+  margin: 40px auto;
+  padding: 0;
 }
 
 .page-link.toEditProfile{
   margin: 30px auto 10px;
+  padding: 0;
+}
+
+.page-link a i{
+  margin: 0 0 0 5px;
+}
+
+.page-link.toEventIndex a i{
+  margin: 0 5px 0 0;
 }
 
 .show_container, .show_container p, .confirm_container, .confirm_container p{
