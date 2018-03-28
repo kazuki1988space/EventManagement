@@ -50,6 +50,7 @@
     <tr>
       <th><%= form.label :開催場所, class: 'place' %></th>
       <td>
+        <div class="placeLength">あと<span class="count"></span>文字入力できます</div>
         <%= form.text_field :place, class: 'place', placeholder: 'イベントの詳細場所を入力して下さい（80文字以内）' %>
       </td>
     </tr>

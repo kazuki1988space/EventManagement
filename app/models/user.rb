@@ -11,7 +11,7 @@ class User < ApplicationRecord
   before_save{email.downcase!}
 
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: { in: 6..20 } 
 
   mount_uploader :icon, ImageUploader
 

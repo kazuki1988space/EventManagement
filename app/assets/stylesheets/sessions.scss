@@ -85,6 +85,10 @@
   margin-top: 50px;
 }
 
+.form.submit.newEvent table tbody tr th label.place{
+  margin-top: 50px;
+}
+
 .form.submit.newEvent table tbody tr td{
   width: 80%;
   padding: 0;
@@ -155,24 +159,24 @@
   background-color: #000;
 }
 
-.titleLength, .contentLength{
+.titleLength, .contentLength, .placeLength{
   margin: 20px 0 0;
   text-align: right;
   font-size: 1.3rem;
   line-height: 1;
 }
 
-.titleLength span.count, .contentLength span.count{
+.titleLength span.count, .contentLength span.count, .placeLength span.count{
   color: #000;
   font-size: 1.8rem;
   font-weight: bold;
 }
 
-.titleLength span.count.yellow, .contentLength span.count.yellow{
+.titleLength span.count.yellow, .contentLength span.count.yellow, .placeLength span.count.yellow{
   color: yellow;
 }
 
-.titleLength span.count.red, .contentLength span.count.red{
+.titleLength span.count.red, .contentLength span.count.red, .placeLength span.count.red{
   color: red;
 }
 

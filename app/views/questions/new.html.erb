@@ -24,7 +24,7 @@
           </td>
         </tr>
         <tr>
-          <th><%= form.label :問合せ内容, class: 'content' %></th>
+          <th><%= form.label :問い合わせ内容, class: 'content' %></th>
           <td>
             <div class="contentLength">あと<span class="count"></span>文字入力できます</div>
             <%= form.text_area :content, class: 'content', placeholder: 'お問い合わせ内容を入力して下さい（1000字以内）' %>
@@ -34,7 +34,7 @@
       <%= form.hidden_field :to_user_id %>
 
       <div class="page-link toConfirmQuestion">
-        <%= form.submit "作成", class: 'btn btn-warning' %>
+        <%= form.submit "問い合わせ作成", class: 'btn btn-warning' %>
       </div>
 
       <% end %>

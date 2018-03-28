@@ -55,11 +55,14 @@ $(document).on('turbolinks:load', function() {
   var newEvent = $('.form.submit.newEvent');
   var titleCount = newEvent.find('.titleLength span.count');
   var contentCount = newEvent.find('.contentLength span.count');
+  var placeCount = newEvent.find('.placeLength span.count');
   var maxTitleLength = 80;
   var maxContentLength = 1000;
+  var maxPlaceLength = 80;
 
   titleCount.text(maxTitleLength);
   contentCount.text(maxContentLength);
+  placeCount.text(maxPlaceLength);
 
   newEvent.find('input.titles').on('keydown keyup keypress change', function(){
     var valueTitleLength = $(this).val().length;
@@ -95,6 +98,25 @@ $(document).on('turbolinks:load', function() {
     if (contentCountDown < 50){
       contentCount.removeClass('yellow');
       contentCount.addClass('red');
+    }
+
+  });
+
+  newEvent.find('input.place').on('keydown keyup keypress change', function(){
+    var valuePlaceLength = $(this).val().length;
+    var placeCountDown = maxPlaceLength - valuePlaceLength;
+    placeCount.text(placeCountDown);
+
+    if (placeCountDown >= 20){
+      placeCount.removeClass('yellow');
+    }
+    if (placeCountDown < 20){
+      placeCount.removeClass('red');
+      placeCount.addClass('yellow');
+    }
+    if (placeCountDown < 10){
+      placeCount.removeClass('yellow');
+      placeCount.addClass('red');
     }
 
   });

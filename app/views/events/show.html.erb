@@ -29,9 +29,11 @@
       <div class="eventShow-sponsor">
         <div class="sponsor-name"><%= @event.user.name %></div>
         <div class="sponsor-icon"><%= image_tag(@event.user.icon.thumb.url) if @event.user.icon.present? %></div>
-        <%= form_with(model: @event, url: new_question_path, local: true, method: 'get') do |form| %>
-        <%= form.hidden_field :user_id %>
-        <%= form.submit "主催者へ問い合わせ >>", class: 'btn btn-warning' %>
+        <% unless @event.user == current_user %>
+          <%= form_with(model: @event, url: new_question_path, local: true, method: 'get') do |form| %>
+          <%= form.hidden_field :user_id %>
+          <%= form.submit "主催者へ問い合わせ >>", class: 'btn btn-warning' %>
+          <% end %>
         <% end %>
       </div>
       <div class="eventshow-updated_at">イベント投稿日 <%= @event.updated_at.to_s(:ja) %></div>

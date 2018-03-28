@@ -8,19 +8,19 @@
       <%= f.label :category, "カテゴリ" %>
       <%= f.select :category_eq, [["セミナー・勉強会", "セミナー・勉強会"], ["異業種交流", "異業種交流"],
       ["恋活・婚活", "恋活・婚活"], ["スポーツ", "スポーツ"], ["趣味", "趣味"],
-      ["その他", "その他"]], class: "category" %>
+      ["その他", "その他"]], {include_blank: true}, class: "category" %>
       <%= f.label :area_cont, "エリア" %>
       <%= f.select :area_eq, [["新宿", "新宿"], ["原宿・表参道", "原宿・表参道"], ["渋谷", "渋谷"],
       ["池袋", "池袋"], ["六本木・麻布", "六本木・麻布"], ["赤坂", "赤坂"], ["銀座・有楽町", "銀座・有楽町"],
       ["丸の内・八重洲", "丸の内・八重洲"], ["品川", "品川"], ["上野", "上野"], ["お台場", "お台場"],
-       ["その他", "その他"]], class: "area" %>
+       ["その他", "その他"]], {include_blank: true}, class: "area" %>
       <div class="block"></div>
       <%= f.label :title_cont, "タイトル" %>
       <%= f.text_field :title_cont, class: "title" %>
       <div class="block"></div>
       <%= f.label :date, "日時" %>
-      <%= f.date_select :date_gt, {start_year: Time.now.year, end_year: Time.now.year + 81, use_month_numbers: true, date_separator: ' / '}, class: "date_gt" %>〜
-      <%= f.date_select :date_lteq_end_of_day, {start_year: Time.now.year, end_year: Time.now.year + 81, use_month_numbers: true, date_separator: ' / '}, class: "date_lt" %>
+      <%= f.date_select :date_gt, {include_blank: true, start_year: Time.now.year, end_year: Time.now.year + 81, use_month_numbers: true, date_separator: ' / '}, class: "date_gt" %>〜
+      <%= f.date_select :date_lteq_end_of_day, {include_blank: true, start_year: Time.now.year, end_year: Time.now.year + 81, use_month_numbers: true, date_separator: ' / '}, class: "date_lt" %>
       <div class="block"></div>
       <%= f.label :payment, "参加料金" %>
       <%= f.number_field :payment_gt, class: "payment_gt" %>円 〜

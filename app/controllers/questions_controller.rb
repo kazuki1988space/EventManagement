@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
     @question.from_user_id = current_user.id
     if @question.save
       QuestionMailer.question_mail(@question).deliver
-      redirect_to event_path(@question.to_user_id)
+      redirect_to event_path(@question.to_user_id), notice: "このイベントの主催者へお問い合わせしました"
     else
       render "new"
     end
