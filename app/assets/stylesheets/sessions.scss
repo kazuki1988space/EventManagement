@@ -61,6 +61,19 @@
   border-radius: 10px;
 }
 
+.require{
+  margin: 3% 18% 0 12%;
+  width: 70%;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.require span{
+  font-size: 2rem;
+  color: red;
+}
+
 .form.submit.newEvent table{
   margin: 0 18% 0 12%;
   width: 70%;
@@ -79,6 +92,16 @@
 .form.submit.newEvent table tbody tr th label{
   margin: 15px 0;
   padding: 15px 0;
+  position: relative;
+}
+
+.form.submit.newEvent table tbody tr th label::before{
+  content: '*';
+  top: 10px;
+  left: -10px;
+  color: red;
+  font-size: 2rem;
+  position: absolute;
 }
 
 .form.submit.newEvent table tbody tr th label.title, .form.submit.newEvent table tbody tr th label.content{

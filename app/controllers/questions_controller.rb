@@ -16,9 +16,10 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.from_user_id = current_user.id
+    @name = User.find_by(id: @question.to_user_id).name
     if @question.save
       QuestionMailer.question_mail(@question).deliver
-      redirect_to event_path(@question.to_user_id), notice: "このイベントの主催者へお問い合わせしました"
+      redirect_to events_path, notice: "主催者の#{@name}さんへお問い合わせしました"
     else
       render "new"
     end

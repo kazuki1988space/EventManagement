@@ -1,6 +1,25 @@
 ---
 ja:
   activerecord:
+    models:
+      event: イベント
+      user: ユーザ
+      question: 問い合わせ
+    attributes:
+      event:
+        title: タイトル
+        content: 概要
+        image: 画像
+        place: 開催場所
+        payment: 参加料金
+        maxpeople: 募集人数
+      user:
+        name: ユーザ名
+        email: メールアドレス
+        password_digest: パスワード
+      question:
+        title: タイトル
+        content: お問い合わせ内容
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
