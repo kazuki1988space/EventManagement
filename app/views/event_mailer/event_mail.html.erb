@@ -11,7 +11,7 @@
       <p>内容: <%= @event.content %></p>
       <p>開催エリア: <%= @event.area %></p>
       <p>開催場所: <%= @event.place %></p>
-      <p>日時: <%= @event.date %></p>
+      <p>日時: <%= @event.date.to_s(:ja)  %>〜</p>
       <p>参加料金: <%= @event.payment %></p>
       <p>募集人数: <%= @event.maxpeople %></p>
       <br>
