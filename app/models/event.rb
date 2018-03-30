@@ -11,8 +11,8 @@ class Event < ApplicationRecord
   validates :area, presence: true, length: {maximum: 15}
   validates :place, presence: true, length: {maximum: 80}
   validates :date, presence: true
-  validates :payment, presence: true, length: {in: 1..8}
-  validates :maxpeople, presence: true, length: {in: 1..5}
+  validates :payment, presence: true, length: {in: 1..8}, numericality: { greater_than_or_equal_to: 0 }
+  validates :maxpeople, presence: true, length: {in: 1..5}, numericality: { greater_than_or_equal_to: 1 }
 
   mount_uploader :image, ImageUploader
 

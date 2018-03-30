@@ -7,7 +7,7 @@
 .post-preview{
   margin: 30px auto;
   padding: 30px;
-  height: 530px;
+  height: 600px;
   border: 1px solid #ccc;
   border-radius: 15px;
   position: relative;
@@ -281,11 +281,12 @@ select#q_date_lt_1i{
 }
 
 .event-links ul li{
-  display: inline-block;
+  //display: inline-block;
+  margin: 5px 0;
 }
 
 .event-links li + li{
-  padding-left: 10%;
+  //padding-left: 10%;
 }
 
 .event-links ul li a i{
