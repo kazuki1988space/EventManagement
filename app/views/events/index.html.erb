@@ -67,7 +67,7 @@
                       <%= link_to edit_event_path(event.id), class: 'btn btn-info' do %>編集<i class="fa fa-angle-double-right"></i><% end %>
                     </li>
                     <li>
-                      <%= link_to edit_event_path(event.id), method: :delete, data: { confirm: '削除してよろしいですか？' }, class: 'btn btn-danger' do %>削除<i class="fa fa-angle-double-right"></i><% end %>
+                      <%= link_to event_path(event.id), method: :delete, data: { confirm: '削除してよろしいですか？' }, class: 'btn btn-danger' do %>削除<i class="fa fa-angle-double-right"></i><% end %>
                     </li>
                      <% end %>
                   <% end %>
